@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import LoadingCircle from './components/LoadingCircle'
 import { ReactComponent as TestimonialsIcon } from './images/testimonials-icon.svg'
 import { ReactComponent as HeaderDivider } from './images/header-divider.svg'
 import Tag from './components/Tag'
@@ -6,9 +7,10 @@ import Testimonial from './components/Testimonial'
 import Footer from './components/Footer'
 
 function App() {
+  const [isLoading, setIsLoading] = useState(true)
   const [results, setResults] = useState([])
   const [pagination, setPagination] = useState({})
-  const [currentPage, setCurrentPage] = useState(2)
+  const [currentPage, setCurrentPage] = useState(1)
 
   function handlePageChange(e) {
     switch (e.target.textContent) {
@@ -25,11 +27,15 @@ function App() {
     }
     
   useEffect(() => {
+    if (!isLoading) {
+      setIsLoading(true)
+    }
       fetch(`https://exercism.org/api/v2/hiring/testimonials?&page=${currentPage}&order=newest_first`)
       .then(res => res.json())
       .then(data => {
         setResults(data.testimonials.results)
         setPagination(data.testimonials.pagination)
+        setIsLoading(false)
       })
     }, [currentPage])
   
@@ -49,7 +55,9 @@ function App() {
           <div className='max-h-full pb-16 overflow-y-scroll'>
             {results.map(result => <Testimonial key={result.id} {...result} />)}
           </div>
-          <Footer {...pagination} handlePageChange={handlePageChange}/>
+          <Footer {...pagination} handlePageChange={handlePageChange} />
+          {/* Loading Circle */}
+          {isLoading && <LoadingCircle />}
         </div>
       </main>
     </div>
