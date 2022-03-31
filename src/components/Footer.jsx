@@ -1,27 +1,32 @@
 import React from "react"
 import Button from "./Button"
-import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/outline"
 
-export default function Footer(props) {
-  console.log(props)
+export default function Footer({ current_page, total_count, total_pages }) {
+  const pages = []
+
+  for (let i = 1; i <= total_pages; i++) {
+    pages.push(
+      {
+        "key": i,
+        "label": i,
+      }
+    )
+  }
+
   return (
     <footer className="absolute bottom-0 flex justify-between w-full px-8 py-4 bg-white border-t border-slate-300">
       <Button
-        style="mx-0"
+        type="Prev"
         label="Previous"
+        style="flex items-center mx-0"
       />
       <div>
-        <Button label="1" />
-        <Button label="2" />
-        <Button label="3" />
-        ...
-        <Button label="10" />
-        <Button label="11" />
-        <Button label="12" />
+        {pages.map(page => <Button {...page} />)}
       </div>
       <Button
-        style="mx-0"
+        type="Next"
         label="Next"
+        style="flex items-center mx-0"
       />
     </footer>
   )
