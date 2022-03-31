@@ -7,12 +7,14 @@ import Footer from './components/Footer'
 
 function App() {
   const [results, setResults] = useState([])
+  const [pagination, setPagination] = useState([])
 
   useEffect(() => {
     fetch('https://exercism.org/api/v2/hiring/testimonials?page=2&track=python&exercise=ming&order=newest_first')
       .then(res => res.json())
       .then(data => {
         setResults(data.testimonials.results)
+        setPagination(data.testimonials.pagination)
       })
   }, [])
 
@@ -27,12 +29,12 @@ function App() {
           </div>
           <HeaderDivider />
         </header>
-        <div className='mx-auto mb-10 w-[1376px] h-[791px] rounded-lg shadow-[0_4px_42px_rgba(79,114,205,0.15)]'>
+        <div className='relative mx-auto mb-10 w-[1376px] h-[791px] rounded-lg shadow-[0_4px_42px_rgba(79,114,205,0.15)]'>
           {/* Listing Header */}
           <div>
             {results.map(result => <Testimonial key={result.id} {...result} />)}
           </div>
-            <Footer />
+          <Footer {...pagination}/>
         </div>
       </main>
     </div>
