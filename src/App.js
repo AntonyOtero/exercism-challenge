@@ -7,17 +7,32 @@ import Footer from './components/Footer'
 
 function App() {
   const [results, setResults] = useState([])
-  const [pagination, setPagination] = useState([])
+  const [pagination, setPagination] = useState({})
+  const [currentPage, setCurrentPage] = useState(2)
 
+  function handlePageChange(e) {
+    switch (e.target.textContent) {
+      case "Next":
+        setCurrentPage(prevPage => prevPage + 1)
+        break
+      case "Previous":
+        setCurrentPage(prevPage => prevPage - 1)
+        break
+      default:
+        setCurrentPage(e.target.textContent)
+        break
+      }
+    }
+    
   useEffect(() => {
-    fetch('https://exercism.org/api/v2/hiring/testimonials?page=2&track=python&exercise=ming&order=newest_first')
+      fetch(`https://exercism.org/api/v2/hiring/testimonials?&page=${currentPage}&order=newest_first`)
       .then(res => res.json())
       .then(data => {
         setResults(data.testimonials.results)
         setPagination(data.testimonials.pagination)
       })
-  }, [])
-
+    }, [currentPage])
+  
   return (
     <div id='app'>
       <main>
@@ -31,10 +46,10 @@ function App() {
         </header>
         <div className='relative mx-auto mb-10 w-[1376px] h-[791px] rounded-lg shadow-[0_4px_42px_rgba(79,114,205,0.15)]'>
           {/* Listing Header */}
-          <div>
+          <div className='max-h-full pb-16 overflow-y-scroll'>
             {results.map(result => <Testimonial key={result.id} {...result} />)}
           </div>
-          <Footer {...pagination}/>
+          <Footer {...pagination} handlePageChange={handlePageChange}/>
         </div>
       </main>
     </div>

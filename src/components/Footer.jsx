@@ -1,16 +1,184 @@
-import React from "react"
+import React, { useState } from "react"
 import Button from "./Button"
 
-export default function Footer({ current_page, total_count, total_pages }) {
-  const pages = []
-
-  for (let i = 1; i <= total_pages; i++) {
-    pages.push(
+export default function Footer({ current_page, total_count, total_pages, handlePageChange }) {
+  let pagination = []
+  if (current_page <= 2) {
+    pagination = [
       {
-        "key": i,
-        "label": i,
-      }
-    )
+        label: 1,
+        currentPage: current_page,
+        handlePageChange: handlePageChange,
+      },
+      {
+        label: 2,
+        currentPage: current_page,
+        handlePageChange: handlePageChange,
+      },
+      {
+        label: 3,
+        currentPage: current_page,
+        handlePageChange: handlePageChange,
+      },
+      {
+        label: "...",
+        style: "border-none pointer-events-none"
+      },
+      {
+        label: total_pages - 2,
+        currentPage: current_page,
+        handlePageChange: handlePageChange,
+      },
+      {
+        label: total_pages - 1,
+        currentPage: current_page,
+        handlePageChange: handlePageChange,
+      },
+      {
+        label: total_pages,
+        currentPage: current_page,
+        handlePageChange: handlePageChange,
+      },
+    ]
+  } else if (current_page < 5) {
+    pagination = [
+      {
+        label: 1,
+        currentPage: current_page,
+        handlePageChange: handlePageChange,
+      },
+      {
+        label: "...",
+        style: "border-none pointer-events-none"
+      },
+      {
+        label: 3,
+        currentPage: current_page,
+        handlePageChange: handlePageChange,
+      },
+      {
+        label: 4,
+        currentPage: current_page,
+        handlePageChange: handlePageChange,
+      },
+      {
+        label: 5,
+        currentPage: current_page,
+        handlePageChange: handlePageChange,
+      },
+      {
+        label: 6,
+        currentPage: current_page,
+        handlePageChange: handlePageChange,
+      },
+      {
+        label: 7,
+        currentPage: current_page,
+        handlePageChange: handlePageChange,
+      },
+      {
+        label: "...",
+        style: "border-none pointer-events-none"
+      },
+      {
+        label: total_pages,
+        currentPage: current_page,
+        handlePageChange: handlePageChange,
+      },
+    ]
+  } else if (current_page < total_pages - 5) {
+    pagination = [
+      {
+        label: 1,
+        currentPage: current_page,
+        handlePageChange: handlePageChange,
+      },
+      {
+        label: "...",
+        style: "border-none pointer-events-none"
+      },
+      {
+        label: current_page - 2,
+        currentPage: current_page,
+        handlePageChange: handlePageChange,
+      },
+      {
+        label: current_page - 1,
+        currentPage: current_page,
+        handlePageChange: handlePageChange,
+      },
+      {
+        label: current_page,
+        currentPage: current_page,
+        handlePageChange: handlePageChange,
+      },
+      {
+        label: current_page + 1,
+        currentPage: current_page,
+        handlePageChange: handlePageChange,
+      },
+      {
+        label: current_page + 2,
+        currentPage: current_page,
+        handlePageChange: handlePageChange,
+      },
+      {
+        label: "...",
+        style: "border-none pointer-events-none"
+      },
+      {
+        label: total_pages,
+        currentPage: current_page,
+        handlePageChange: handlePageChange,
+      },
+    ]
+  } else if (current_page >= total_pages - 5) {
+    pagination = [
+      {
+        label: 1,
+        currentPage: current_page,
+        handlePageChange: handlePageChange,
+      },
+      {
+        label: "...",
+        style: "border-none pointer-events-none"
+      },
+      {
+        label: total_pages - 6,
+        currentPage: current_page,
+        handlePageChange: handlePageChange,
+      },
+      {
+        label: total_pages - 5,
+        currentPage: current_page,
+        handlePageChange: handlePageChange,
+      },
+      {
+        label: total_pages - 4,
+        currentPage: current_page,
+        handlePageChange: handlePageChange,
+      },
+      {
+        label: total_pages - 3,
+        currentPage: current_page,
+        handlePageChange: handlePageChange,
+      },
+      {
+        label: total_pages - 2,
+        currentPage: current_page,
+        handlePageChange: handlePageChange,
+      },
+      {
+        label: total_pages - 1,
+        currentPage: current_page,
+        handlePageChange: handlePageChange,
+      },
+      {
+        label: total_pages,
+        currentPage: current_page,
+        handlePageChange: handlePageChange,
+      },
+    ]
   }
 
   return (
@@ -18,15 +186,17 @@ export default function Footer({ current_page, total_count, total_pages }) {
       <Button
         type="Prev"
         label="Previous"
-        style="flex items-center mx-0"
+        style={current_page === 1 ? "flex items-center mx-0 text-slate-500 bg-slate-200 pointer-events-none" : "flex items-center mx-0"}
+        handlePageChange={handlePageChange}
       />
       <div>
-        {pages.map(page => <Button {...page} />)}
+        {pagination.map(button => <Button {...button} />)}
       </div>
       <Button
         type="Next"
         label="Next"
-        style="flex items-center mx-0"
+        style={current_page === total_pages ? "flex items-center mx-0 text-slate-500 bg-slate-200 pointer-events-none" : "flex items-center mx-0"}
+        handlePageChange={handlePageChange}
       />
     </footer>
   )
