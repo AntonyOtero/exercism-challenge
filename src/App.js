@@ -8,14 +8,13 @@ function App() {
   const [results, setResults] = useState([])
 
   useEffect(() => {
-    fetch('https://exercism.org/api/v2/hiring/testimonials?page=2&track=python&exercise=ming&order=newest_first')
+    fetch('https://exercism.org/api/v2/hiring/testimonials?page=1&order=newest_first')
       .then(res => res.json())
       .then(data => {
         setResults(data.testimonials.results)
       })
   }, [])
 
-  console.log(results)
   return (
     <div id='app'>
       <main>
