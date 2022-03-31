@@ -25,7 +25,7 @@ function App() {
           <TestimonialsIcon />
           <div className='flex items-center mt-3 mb-4'>
             <h1 className='mx-4 font-bold text-3xl text-[#130B43]'>Testimonials I've Left</h1>
-            <Tag label={47} />
+            <Tag label={pagination.total_count} />
           </div>
           <HeaderDivider />
         </header>
