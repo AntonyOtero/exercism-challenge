@@ -3,6 +3,7 @@ import { ReactComponent as TestimonialsIcon } from './images/testimonials-icon.s
 import { ReactComponent as HeaderDivider } from './images/header-divider.svg'
 import Tag from './components/Tag'
 import Testimonial from './components/Testimonial'
+import Footer from './components/Footer'
 
 function App() {
   const [results, setResults] = useState([])
@@ -29,10 +30,9 @@ function App() {
         <div className='mx-auto mb-10 w-[1376px] h-[791px] rounded-lg shadow-[0_4px_42px_rgba(79,114,205,0.15)]'>
           {/* Listing Header */}
           <div>
-            {/* Testimonials */}
             {results.map(result => <Testimonial key={result.id} {...result} />)}
           </div>
-          {/* Listing Footer */}
+            <Footer />
         </div>
       </main>
     </div>
