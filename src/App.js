@@ -10,7 +10,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(true)
   const [results, setResults] = useState([])
   const [pagination, setPagination] = useState({})
-  const [currentPage, setCurrentPage] = useState(1)
+  const [currentPage, setCurrentPage] = useState(96)
 
   function handlePageChange(e) {
     switch (e.target.textContent) {
@@ -52,7 +52,7 @@ function App() {
         </header>
         <div className='relative mx-auto mb-10 w-[1376px] h-[791px] rounded-lg shadow-[0_4px_42px_rgba(79,114,205,0.15)]'>
           {/* Listing Header */}
-          <div className='max-h-full pb-16 overflow-y-scroll'>
+          <div className='max-h-full py-16 overflow-y-scroll'>
             {results.map(result => <Testimonial key={result.id} {...result} />)}
           </div>
           <Footer {...pagination} handlePageChange={handlePageChange} />
