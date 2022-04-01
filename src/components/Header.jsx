@@ -45,7 +45,7 @@ export default function Header({handleSorting}) {
                       key={index}
                       className={({ active }) =>
                         classNames(
-                          active ? 'text-white bg-theme-active' : 'text-theme-faded-400',
+                          active ? 'text-theme-faded-400 bg-theme-light-200' : 'text-theme-faded-400',
                           'cursor-default select-none relative py-2 pl-3 pr-9'
                         )
                       }
