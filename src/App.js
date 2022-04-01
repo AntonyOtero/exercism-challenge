@@ -12,7 +12,7 @@ function App() {
   const [results, setResults] = useState([])
   const [pagination, setPagination] = useState({})
   const [currentPage, setCurrentPage] = useState(1)
-  const [sortFilter, setSortFilter] = useState("")
+  const [sortFilter, setSortFilter] = useState("&order=newest_first")
 
   function handlePageChange(e) {
     switch (e.target.textContent) {
