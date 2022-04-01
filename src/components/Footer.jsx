@@ -194,16 +194,16 @@ export default function Footer({ current_page, total_count, total_pages, handleP
       <Button
         type="Prev"
         label="Previous"
-        style={current_page === 1 ? "flex items-center mx-0 text-slate-500 bg-slate-200 pointer-events-none" : "flex items-center mx-0"}
+        style={current_page === 1 ? "flex items-center mx-0 text-slate-500 bg-slate-200 shadow-theme-sm pointer-events-none" : "flex items-center mx-0 shadow-theme-sm"}
         handlePageChange={handlePageChange}
       />
       <div>
-        {pagination.map(button => <Button {...button} />)}
+        {pagination.map((button, index) => <Button key={index} {...button} />)}
       </div>
       <Button
         type="Next"
         label="Next"
-        style={current_page === total_pages ? "flex items-center mx-0 text-slate-500 bg-slate-200 pointer-events-none" : "flex items-center mx-0"}
+        style={current_page === total_pages ? "flex items-center mx-0 text-slate-500 bg-slate-200 shadow-theme-sm pointer-events-none" : "flex items-center mx-0 shadow-theme-sm"}
         handlePageChange={handlePageChange}
       />
     </footer>
