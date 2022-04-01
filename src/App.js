@@ -10,7 +10,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(true)
   const [results, setResults] = useState([])
   const [pagination, setPagination] = useState({})
-  const [currentPage, setCurrentPage] = useState(96)
+  const [currentPage, setCurrentPage] = useState(1)
 
   function handlePageChange(e) {
     switch (e.target.textContent) {
@@ -30,7 +30,7 @@ function App() {
     if (!isLoading) {
       setIsLoading(true)
     }
-      fetch(`https://exercism.org/api/v2/hiring/testimonials?&page=${currentPage}&order=newest_first`)
+      fetch(`https://exercism.org/api/v2/hiring/testimonials?page=${currentPage}&track=python&exercise=ming&order=newest_first`)
       .then(res => res.json())
       .then(data => {
         setResults(data.testimonials.results)

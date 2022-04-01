@@ -3,7 +3,15 @@ import Button from "./Button"
 
 export default function Footer({ current_page, total_count, total_pages, handlePageChange }) {
   let pagination = []
-  if (current_page <= 2) {
+  if (total_pages <= 7) {
+    for (let i = 1; i <= total_pages; i++) {
+      pagination.push({
+        label: i,
+        currentPage: current_page,
+        handlePageChange: handlePageChange,
+      })
+    }
+  } else if (current_page <= 2) {
     pagination = [
       {
         label: 1,
