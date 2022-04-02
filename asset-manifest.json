@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/exercism-challenge/static/css/main.18db867d.css",
+    "main.js": "/exercism-challenge/static/js/main.86243573.js",
+    "static/js/787.0174982d.chunk.js": "/exercism-challenge/static/js/787.0174982d.chunk.js",
+    "static/media/testimonials-icon.svg": "/exercism-challenge/static/media/testimonials-icon.32e567f0e6715c87b091b7147fb3ae40.svg",
+    "index.html": "/exercism-challenge/index.html",
+    "static/media/index.cjs": "/exercism-challenge/static/media/index.cd351d7c31d0d3fccf96.cjs",
+    "static/media/header-divider.svg": "/exercism-challenge/static/media/header-divider.9257779ff36ab4f776b8d2586e72a91a.svg",
+    "main.18db867d.css.map": "/exercism-challenge/static/css/main.18db867d.css.map",
+    "main.86243573.js.map": "/exercism-challenge/static/js/main.86243573.js.map",
+    "787.0174982d.chunk.js.map": "/exercism-challenge/static/js/787.0174982d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.18db867d.css",
+    "static/js/main.86243573.js"
+  ]
+}
