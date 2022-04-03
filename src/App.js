@@ -6,13 +6,24 @@ import Tag from './components/Tag'
 import Header from './components/Header'
 import Testimonial from './components/Testimonial'
 import Footer from './components/Footer'
+import { data } from 'autoprefixer'
 
 function App() {
   const [isLoading, setIsLoading] = useState(true)
+  const [trackCounts, setTrackCounts] = useState({})
   const [results, setResults] = useState([])
   const [pagination, setPagination] = useState({})
   const [currentPage, setCurrentPage] = useState(1)
+  const [trackFilter, setTrackFilter] = useState("")
   const [sortFilter, setSortFilter] = useState("&order=newest_first")
+
+  function handleTrackFilter(slug) {
+    setTrackFilter(slug ? `&track=${slug}` : '')
+  }
+
+  function handleSorting(selected) {
+    setSortFilter('&order=' + selected.replace(" ", "_").toLowerCase())
+  }
 
   function handlePageChange(e) {
     switch (e.target.textContent) {
@@ -27,24 +38,23 @@ function App() {
         break
       }
   }
-  
-  function handleSorting(selected) {
-    setSortFilter('&order=' + selected.replace(" ", "_").toLowerCase())
-  }
-    
+  console.log(Object.keys(pagination).length)
   useEffect(() => {
     if (!isLoading) {
       setIsLoading(true)
     }
-      fetch(`https://exercism.org/api/v2/hiring/testimonials?page=${currentPage}${sortFilter}`)
+      fetch(`https://exercism.org/api/v2/hiring/testimonials?page=${currentPage}${trackFilter}${sortFilter}`)
       .then(res => res.json())
-      .then(data => {
+        .then(data => {
+        setTrackCounts(data.testimonials.track_counts)
         setResults(data.testimonials.results)
-        setPagination(data.testimonials.pagination)
+        if (Object.keys(pagination).length === 0) {
+          setPagination(data.testimonials.pagination)
+        }
         setIsLoading(false)
       })
-    }, [currentPage, sortFilter])
-  
+    }, [currentPage, sortFilter, trackFilter])
+
   return (
     <div id='app'>
       <main>
@@ -57,7 +67,12 @@ function App() {
           <HeaderDivider />
         </header>
         <div className='relative mx-auto pt-20 pb-[70px] mb-10 w-[1376px] h-[791px] rounded-lg shadow-[0_4px_42px_rgba(79,114,205,0.15)]'>
-          <Header handleSorting={handleSorting} />
+          <Header
+            trackCounts={trackCounts}
+            totalCount={pagination.total_count}
+            handleSorting={handleSorting}
+            handleTrackFilter={handleTrackFilter}
+          />
           <div className='max-h-full overflow-y-scroll'>
             {results.map(result => <Testimonial key={result.id} {...result} />)}
           </div>
