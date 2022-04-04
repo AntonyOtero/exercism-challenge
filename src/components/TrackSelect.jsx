@@ -38,7 +38,7 @@ export default function TrackSelect({ tracks, trackCounts, totalCount, handleTra
               <div className='flex items-center justify-between w-80 py-2 px-6'>
                 <div className='flex items-center'>
                   <div className="flex items-center justify-center w-5 h-5 mr-6 border border-theme-faded-300 rounded-full">
-                    <div className={`${selected ? "w-2.5 h-2.5 bg-theme-faded-400 border rounded-full" : "hidden"}`}></div>
+                    <div className={`w-2.5 h-2.5 bg-theme-faded-400 border rounded-full`}></div>
                   </div>
                   <img
                     className='h-10 mr-4'
