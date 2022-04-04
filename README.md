@@ -1,70 +1,124 @@
-# Getting Started with Create React App
+# My Submission to Exercism's Frontend Developer Challenge
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is my implementation of [Exercism's Frontend Developer Challenge for applicants](https://github.com/exercism/hiring-frontend-developer). I have limited experience with React and no prior experience with Tailwind 3 or TypeScript. Ultimately, I decided to take on the challenge using React and Tailwind 3 while forgoing TypeScript for the mean time as not to overwhelm myself. I'll revisit TypeScript through projects like those found at [Frontend Mentor](https://frontendmentor.io/) and by joining the [TypeScript track](https://exercism.org/tracks/typescript) at [Exercism.org](https://exercism.org/).
 
-## Available Scripts
+## Table of contents
 
-In the project directory, you can run:
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+- [Getting Started](#getting-started)
+- [Author](#author)
 
-### `yarn start`
+## Overview
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### The challenge
+You can read the [details of the challenge here](https://github.com/exercism/hiring-frontend-developer).
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Screenshot
 
-### `yarn test`
+![](./exercism-challenge.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Links
 
-### `yarn build`
+- Live Site URL: [https://antonyotero.github.io/exercism-challenge](https://antonyotero.github.io/exercism-challenge)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## My process
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Built with
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- [React](https://reactjs.org/) - JS library
+- [Tailwind CSS](https://tailwindcss.com/) - CSS framework
+- [Headless UI](https://headlessui.dev/) - UI components
+- [Heroicons](https://heroicons.com/) - SVG icons
+- [GitHub Pages](https://pages.github.com/) - Hosting
+- [Yarn](https://yarnpkg.com/) - Package manager
 
-### `yarn eject`
+### What I learned
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+...revisit
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Continued development
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+...revisit
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Useful resources
 
-## Learn More
+- [npm vs Yarn Cheat Sheet](https://www.digitalocean.com/community/tutorials/nodejs-npm-yarn-cheatsheet) - This is a cheat sheet that you can use as a handy reference for npm & Yarn commands.
+- [Create React App | Getting Started](https://create-react-app.dev/docs/getting-started) - If you need help setting up the project.
+- [Tailwind CSS | Create React App](https://tailwindcss.com/docs/guides/create-react-app) - Setting up Tailwind CSS in a Create React App project.
+- [Create React App | Deployment](https://create-react-app.dev/docs/deployment#github-pages) - This section of the Create-react-app documentaion explains how to deploy your app onto GitHub Pages.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Getting Started
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+To get a local copy up and running follow these simple example steps.
 
-### Code Splitting
+### Prerequisites
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- [Yarn](https://yarnpkg.com/getting-started/install)
+- [GitHub CLI](https://cli.github.com/)
 
-### Analyzing the Bundle Size
+### Setup
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+With GitHub CLI installed, to fork this repo and clone it locally in your computer, run:
 
-### Making a Progressive Web App
+``` zsh
+gh repo fork AntonyOtero/exercism-challenge --clone=true
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Install
 
-### Advanced Configuration
+To install all the project dependencies, run:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+``` zsh
+yarn
+```
+
+### Usage
+
+To start the repo on a local server, run:
+
+``` zsh
+yarn start
+```
+
+Then you can navigate to the localhost url it provides (e.g. http://localhost:3000/).
+
+### Run tests
+
+To run the included tests:
+
+``` zsh
+yarn test
+```
 
 ### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+To deploy your forked repo onto GitHub Pages:
 
-### `yarn build` fails to minify
+1. Make sure you head to the `Pages` section of your repos `Settings` and enable github pages on your repo (if it's not already). Also, be sure to set the source branch to `gh-pages`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+2. Open your `package.json` and update the `homepage` field for your project:
+
+*Be sure to update your username in the url below*
+
+```zsh
+"homepage": "https://myusername.github.io/exercism-challenge"
+```
+
+3. Run the following command to deploy your site:
+
+``` zsh
+yarn deploy
+```
+
+## Author
+
+- Website - [Antony Otero](https://www.antonyotero.com/)
+- LinkedIn - [@antonyotero](https://www.linkedin.com/in/antonyotero/)
