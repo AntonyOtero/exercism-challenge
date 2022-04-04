@@ -32,7 +32,7 @@ export default function Testimonial({ id, track, exercise, mentor, content, crea
   }
 
   return (
-    <a className="grid grid-cols-6 items-center w-full px-6 py-3 border-b" href="#" id={id}>
+    <a className="grid grid-cols-6 items-center w-full px-6 py-3 border-b" href={`#${id}`} id={id}>
       <div className="col-span-2 flex items-center justify-start">
         <img className="h-8 mr-6" src={track.icon_url} alt={track.slug} />
         <img className="h-full max-h-11 mr-4 rounded-full" src={mentor.avatar_url} alt={mentor.handle} />
