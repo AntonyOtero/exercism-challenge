@@ -5,14 +5,6 @@ import Tag from './Tag'
 import { ChevronDownIcon } from '@heroicons/react/outline'
 import GenericTrack from '../images/generic-track.png'
 
-const people = [
-  { id: 1, name: 'Durward Reynolds', unavailable: false },
-  { id: 2, name: 'Kenton Towne', unavailable: false },
-  { id: 3, name: 'Therese Wunsch', unavailable: false },
-  { id: 4, name: 'Benedict Kessler', unavailable: true },
-  { id: 5, name: 'Katelyn Rohan', unavailable: false },
-]
-
 export default function TrackSelect({ tracks, trackCounts, totalCount, handleTrackFilter }) {
   const [selectedTrack, setSelectedTrack] = useState(
     <img src={GenericTrack} alt=""></img>
@@ -29,7 +21,7 @@ export default function TrackSelect({ tracks, trackCounts, totalCount, handleTra
         className='flex items-center'
       >
         {selectedTrack}
-        <ChevronDownIcon className='w-5 ml-1.5' />
+        <ChevronDownIcon className='w-5 ml-3' />
       </Listbox.Button>
       <Listbox.Options className="absolute h-96 p-2 bg-white border rounded-lg shadow-theme-lg overflow-y-scroll z-10">
         <Listbox.Option
