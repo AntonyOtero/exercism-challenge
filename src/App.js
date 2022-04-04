@@ -13,12 +13,26 @@ function App() {
   const [results, setResults] = useState([])
   const [totalCount, setTotalCount] = useState(0)
   const [pagination, setPagination] = useState({})
+  const [exerciseFilter, setExerciseFilter] = useState("")
   const [currentPage, setCurrentPage] = useState(1)
   const [trackFilter, setTrackFilter] = useState("")
   const [sortFilter, setSortFilter] = useState("&order=newest_first")
 
+  console.log(exerciseFilter.split("="))
+
   function handleTrackFilter(slug) {
-    setTrackFilter(slug ? `&track=${slug}` : '')
+    setTrackFilter(slug ? `&track=${slug}` : "")
+  }
+
+  function formatQuery(query) {
+    return query.toLowerCase().replace(/ /g, "_")
+  }
+
+  function handleExerciseFilter(exercise) {
+    const formattedQuery = formatQuery(exercise)
+    if (formattedQuery !== exerciseFilter.split("=")[1]) {
+      setExerciseFilter(exercise ? `&exercise=${formattedQuery}` : "")
+    }
   }
 
   function handleSorting(selected) {
@@ -38,12 +52,12 @@ function App() {
         break
       }
   }
-  
+
   useEffect(() => {
     if (!isLoading) {
       setIsLoading(true)
     }
-      fetch(`https://exercism.org/api/v2/hiring/testimonials?page=${currentPage}${trackFilter}${sortFilter}`)
+      fetch(`https://exercism.org/api/v2/hiring/testimonials?page=${currentPage}${trackFilter}${exerciseFilter}${sortFilter}`)
       .then(res => res.json())
       .then(data => {
         setTrackCounts(data.testimonials.track_counts)
@@ -54,7 +68,7 @@ function App() {
         setPagination(data.testimonials.pagination)
         setIsLoading(false)
       })
-    }, [currentPage, sortFilter, trackFilter])
+    }, [trackFilter, exerciseFilter, sortFilter, currentPage])
 
   return (
     <div id='app'>
@@ -71,8 +85,9 @@ function App() {
           <Header
             trackCounts={trackCounts}
             totalCount={totalCount}
-            handleSorting={handleSorting}
             handleTrackFilter={handleTrackFilter}
+            handleExerciseFilter={handleExerciseFilter}
+            handleSorting={handleSorting}
           />
           <div className='max-h-full overflow-y-scroll'>
             {results.map(result => <Testimonial key={result.id} {...result} />)}

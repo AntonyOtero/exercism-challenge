@@ -3,7 +3,7 @@ import TrackSelect from './TrackSelect';
 import ExerciseFilter from './ExerciseFilter';
 import Sort from './Sort';
 
-export default function Header({ trackCounts, totalCount, handleSorting, handleTrackFilter }) {
+export default function Header({ trackCounts, totalCount, handleTrackFilter, handleExerciseFilter, handleSorting}) {
   const [tracks, setTracks] = useState({ tracks: [] })
 
   useEffect(() => {
@@ -18,7 +18,7 @@ export default function Header({ trackCounts, totalCount, handleSorting, handleT
     <div className='absolute flex justify-between top-0 w-full px-8 py-4 bg-white border-b'>
       <div className="flex items-center">
         <TrackSelect tracks={tracks.tracks} trackCounts={trackCounts} totalCount={totalCount} handleTrackFilter={handleTrackFilter} />
-        <ExerciseFilter />
+        <ExerciseFilter handleExerciseFilter={handleExerciseFilter} />
       </div>
       <Sort handleSorting={handleSorting} />
     </div>
