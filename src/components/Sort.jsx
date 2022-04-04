@@ -19,7 +19,7 @@ export default function Sort({handleSorting }) {
     <Listbox value={selected} onChange={setSelected}>
       {({ open }) => (
         <>
-          <div className="w-80  relative">
+          <div className="w-80 relative">
             <Listbox.Button className="relative w-full bg-theme-light-200 rounded-md shadow-sm cursor-pointer focus:outline-none focus:ring-1 focus:ring-theme-active focus:border-theme-active sm:text-sm">
               <span className="flex items-center">
                 <span className="block my-3 mx-5 text-base text-theme-faded-300 truncate">
@@ -27,7 +27,7 @@ export default function Sort({handleSorting }) {
                 </span>
               </span>
               <span className="ml-1.5 absolute inset-y-0 right-5 flex items-center pr-2 pointer-events-none">
-                <ChevronDownIcon className="w-5 stroke-theme-faded-300" aria-hidden="true" />
+                <ChevronDownIcon className="w-6 stroke-theme-faded-300" aria-hidden="true" />
               </span>
             </Listbox.Button>
 
