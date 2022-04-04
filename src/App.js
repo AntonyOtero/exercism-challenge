@@ -54,22 +54,22 @@ function App() {
       }
   }
 
-  // useEffect(() => {
-  //   if (!isLoading) {
-  //     setIsLoading(true)
-  //   }
-  //     fetch(`https://exercism.org/api/v2/hiring/testimonials?page=${currentPage}${trackFilter}${exerciseFilter}${sortFilter}`)
-  //     .then(res => res.json())
-  //     .then(data => {
-  //       setTrackCounts(data.testimonials.track_counts)
-  //       setResults(data.testimonials.results)
-  //       if (totalCount === 0) {
-  //         setTotalCount(data.testimonials.pagination.total_count)
-  //       }
-  //       setPagination(data.testimonials.pagination)
-  //       setIsLoading(false)
-  //     })
-  //   }, [trackFilter, exerciseFilter, sortFilter, currentPage])
+  useEffect(() => {
+    if (!isLoading) {
+      setIsLoading(true)
+    }
+      fetch(`https://exercism.org/api/v2/hiring/testimonials?page=${currentPage}${trackFilter}${exerciseFilter}${sortFilter}`)
+      .then(res => res.json())
+      .then(data => {
+        setTrackCounts(data.testimonials.track_counts)
+        setResults(data.testimonials.results)
+        if (totalCount === 0) {
+          setTotalCount(data.testimonials.pagination.total_count)
+        }
+        setPagination(data.testimonials.pagination)
+        setIsLoading(false)
+      })
+    }, [trackFilter, exerciseFilter, sortFilter, currentPage])
 
   return (
     <div id='app'>
