@@ -6,7 +6,6 @@ import Tag from './components/Tag'
 import Header from './components/Header'
 import Testimonial from './components/Testimonial'
 import Footer from './components/Footer'
-import { data } from 'autoprefixer'
 
 function App() {
   const [isLoading, setIsLoading] = useState(true)
@@ -39,7 +38,7 @@ function App() {
         break
       }
   }
-  console.log(pagination)
+  
   useEffect(() => {
     if (!isLoading) {
       setIsLoading(true)
