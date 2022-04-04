@@ -9,21 +9,21 @@ function classNames(...classes) {
 }
 
 export default function Sort({handleSorting }) {
-  const [selected, setSelected] = useState(options[0])
+  const [selectedSort, setSelectedSort] = useState(options[0])
 
   useEffect(() => {
-    handleSorting(selected)
-  }, [selected])
+    handleSorting(selectedSort)
+  }, [selectedSort])
 
   return (
-    <Listbox value={selected} onChange={setSelected}>
+    <Listbox value={selectedSort} onChange={setSelectedSort}>
       {({ open }) => (
         <>
           <div className="w-80 relative">
             <Listbox.Button className="relative w-full bg-theme-light-200 rounded-md shadow-sm cursor-pointer focus:outline-none focus:ring-1 focus:ring-theme-active focus:border-theme-active sm:text-sm">
               <span className="flex items-center">
                 <span className="block my-3 mx-5 text-base text-theme-faded-300 truncate">
-                  Sort by {selected}
+                  Sort by {selectedSort}
                 </span>
               </span>
               <span className="ml-1.5 absolute inset-y-0 right-5 flex items-center pr-2 pointer-events-none">
@@ -50,7 +50,7 @@ export default function Sort({handleSorting }) {
                     }
                     value={option}
                   >
-                    {({ selected, active }) => (
+                    {({ selected }) => (
                       <>
                         <div className="flex items-center">
                           <span
