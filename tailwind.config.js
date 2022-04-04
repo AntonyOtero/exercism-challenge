@@ -20,6 +20,7 @@ module.exports = {
       boxShadow: {
         'theme-lg': '0px 4px 42px rgba(79, 114, 205, 0.15)',
         'theme-sm': '0px 1px 0px 1px rgba(203, 201, 217, 0.6)',
+        'theme-glow': '0px 0px 2px 2px rgba(46, 87, 232, 0.25)',
       }
     },
   },
