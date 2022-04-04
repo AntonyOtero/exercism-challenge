@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react'
-import LoadingCircle from './components/LoadingCircle'
-import { ReactComponent as TestimonialsIcon } from './images/testimonials-icon.svg'
-import { ReactComponent as HeaderDivider } from './images/header-divider.svg'
+
+import TopBar from './components/TopBar'
 import Tag from './components/Tag'
 import Header from './components/Header'
 import Testimonial from './components/Testimonial'
 import Footer from './components/Footer'
+
+import LoadingCircle from './components/LoadingCircle'
+import { ReactComponent as TestimonialsIcon } from './images/testimonials-icon.svg'
+import { ReactComponent as HeaderDivider } from './images/header-divider.svg'
 
 function App() {
   const [isLoading, setIsLoading] = useState(true)
@@ -51,25 +54,26 @@ function App() {
       }
   }
 
-  useEffect(() => {
-    if (!isLoading) {
-      setIsLoading(true)
-    }
-      fetch(`https://exercism.org/api/v2/hiring/testimonials?page=${currentPage}${trackFilter}${exerciseFilter}${sortFilter}`)
-      .then(res => res.json())
-      .then(data => {
-        setTrackCounts(data.testimonials.track_counts)
-        setResults(data.testimonials.results)
-        if (totalCount === 0) {
-          setTotalCount(data.testimonials.pagination.total_count)
-        }
-        setPagination(data.testimonials.pagination)
-        setIsLoading(false)
-      })
-    }, [trackFilter, exerciseFilter, sortFilter, currentPage])
+  // useEffect(() => {
+  //   if (!isLoading) {
+  //     setIsLoading(true)
+  //   }
+  //     fetch(`https://exercism.org/api/v2/hiring/testimonials?page=${currentPage}${trackFilter}${exerciseFilter}${sortFilter}`)
+  //     .then(res => res.json())
+  //     .then(data => {
+  //       setTrackCounts(data.testimonials.track_counts)
+  //       setResults(data.testimonials.results)
+  //       if (totalCount === 0) {
+  //         setTotalCount(data.testimonials.pagination.total_count)
+  //       }
+  //       setPagination(data.testimonials.pagination)
+  //       setIsLoading(false)
+  //     })
+  //   }, [trackFilter, exerciseFilter, sortFilter, currentPage])
 
   return (
     <div id='app'>
+      <TopBar />
       <main>
         <header className='flex flex-col items-center pt-10 pb-8'>
           <TestimonialsIcon />
