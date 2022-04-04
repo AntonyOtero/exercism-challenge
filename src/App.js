@@ -18,8 +18,6 @@ function App() {
   const [trackFilter, setTrackFilter] = useState("")
   const [sortFilter, setSortFilter] = useState("&order=newest_first")
 
-  console.log(exerciseFilter.split("="))
-
   function handleTrackFilter(slug) {
     setTrackFilter(slug ? `&track=${slug}` : "")
   }
@@ -81,7 +79,7 @@ function App() {
           </div>
           <HeaderDivider />
         </header>
-        <div className='relative mx-auto pt-20 pb-[70px] mb-10 w-[1376px] h-[791px] rounded-lg shadow-[0_4px_42px_rgba(79,114,205,0.15)]'>
+        <div className='relative mx-auto pt-20 pb-[70px] mb-10 w-[1376px] h-[791px] rounded-lg shadow-theme-lg'>
           <Header
             trackCounts={trackCounts}
             totalCount={totalCount}
