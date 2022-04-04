@@ -48,7 +48,7 @@ function App() {
         setCurrentPage(prevPage => prevPage - 1)
         break
       default:
-        setCurrentPage(e.target.textContent)
+        setCurrentPage(parseInt(e.target.textContent))
         break
       }
   }
