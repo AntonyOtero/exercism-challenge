@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import Button from "./Button"
 
 export default function Footer({ current_page, total_count, total_pages, handlePageChange }) {
