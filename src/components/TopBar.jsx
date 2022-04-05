@@ -18,25 +18,25 @@ const links = [
   {
     name: 'Dashboard',
     icon: <DashboardIcon className='absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 stroke-inherit' />,
-    path: '/dashboard',
+    path: 'dashboard',
     selected: true
   },
   {
     name: 'Tracks',
     icon: <TracksIcon className='absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 stroke-inherit' />,
-    path: '/tracks',
+    path: 'tracks',
     selected: false
   },
   {
     name: 'Mentoring',
     icon: <MentoringIcon className='absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 stroke-inherit' />,
-    path: '/mentoring',
+    path: 'mentoring',
     selected: false
   },
   {
     name: 'Contribute',
     icon: <ContributeIcon className='absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 stroke-inherit' />,
-    path: '/contribute',
+    path: 'contribute',
     selected: false
   },
 ]
