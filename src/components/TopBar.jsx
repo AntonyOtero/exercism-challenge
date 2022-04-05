@@ -1,9 +1,37 @@
 import ExercismLogo from '../images/exercism-logo.svg'
-import IconBackground from '../images/icon-bg.svg'
-import DashboardIcon from '../images/dashboard-icon.svg'
-import TracksIcon from '../images/tracks-icon.svg'
-import MentoringIcon from '../images/mentoring-icon.svg'
-import ContributeIcon from '../images/contribute-icon.svg'
+import NavItem from './NavItem'
+
+import { ReactComponent as DashboardIcon } from '../images/dashboard-icon.svg'
+import { ReactComponent as TracksIcon } from '../images/tracks-icon.svg'
+import { ReactComponent as MentoringIcon } from '../images/mentoring-icon.svg'
+import { ReactComponent as ContributeIcon } from '../images/contribute-icon.svg'
+
+const links = [
+  {
+    name: 'Dashboard',
+    icon: <DashboardIcon className='absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 stroke-inherit' />,
+    path: '/dashboard',
+    selected: true
+  },
+  {
+    name: 'Tracks',
+    icon: <TracksIcon className='absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 stroke-inherit' />,
+    path: '/tracks',
+    selected: false
+  },
+  {
+    name: 'Mentoring',
+    icon: <MentoringIcon className='absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 stroke-inherit' />,
+    path: '/mentoring',
+    selected: false
+  },
+  {
+    name: 'Contribute',
+    icon: <ContributeIcon className='absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 stroke-inherit' />,
+    path: '/contribute',
+    selected: false
+  },
+]
 
 export default function TopBar() {
   return (
@@ -13,33 +41,7 @@ export default function TopBar() {
       </div>
       <nav className='font-semibold text-theme-faded-300'>
         <ul className="flex items-center">
-          <li className="mr-8 text-theme-default">
-            <a className='flex items-center' href="/dashboard">
-              <div className='relative'>
-                <img src={IconBackground} alt="" />
-                <img className='absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2' src={DashboardIcon} alt="" />
-              </div>
-              <span className="ml-2.5">Dashboard</span>
-            </a>
-          </li>
-          <li className="mr-8">
-            <a className='flex items-center' href="/dashboard">
-              <img src={TracksIcon} alt="" />
-              <span className="ml-2.5">Tracks</span>
-            </a>
-          </li>
-          <li className="mr-8">
-            <a className='flex items-center' href="/dashboard">
-              <img src={MentoringIcon} alt="" />
-              <span className="ml-2.5">Mentoring</span>
-            </a>
-          </li>
-          <li className="mr-8">
-            <a className='flex items-center' href="/dashboard">
-              <img src={ContributeIcon} alt="" />
-              <span className="ml-2.5">Contribute</span>
-            </a>
-          </li>
+          { links.map(link => <NavItem key={ link.name } { ...link } />) }
         </ul>
       </nav>
     </header>
