@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
-import TrackSelect from './TrackSelect';
+import TrackFilter from './TrackFilter';
 import ExerciseFilter from './ExerciseFilter';
 import Sort from './Sort';
+import GenericTrackIcon from '../images/generic-track.png'
 
 export default function Header({ trackCounts, totalCount, handleTrackFilter, handleExerciseFilter, handleSorting}) {
   const [tracks, setTracks] = useState({ tracks: [] })
@@ -14,10 +15,30 @@ export default function Header({ trackCounts, totalCount, handleTrackFilter, han
       })
   }, [])
 
+  trackCounts.all = totalCount
+
   return (
     <div className='absolute flex justify-between top-0 w-full px-8 py-4 bg-white border-b'>
       <div className="flex items-center">
-        <TrackSelect tracks={tracks.tracks} trackCounts={trackCounts} totalCount={totalCount} handleTrackFilter={handleTrackFilter} />
+        <TrackFilter
+          tracks={[
+            {
+              icon_url: GenericTrackIcon,
+              is_new: false,
+              last_touched_at: null,
+              links: {},
+              num_concepts: 0,
+              num_exercises: 0,
+              slug: "all",
+              tags: [],
+              title: "All",
+              web_url: ""
+            },
+            ...tracks.tracks
+          ]}
+          trackCounts={trackCounts}
+          handleTrackFilter={handleTrackFilter}
+        />
         <ExerciseFilter handleExerciseFilter={handleExerciseFilter} />
       </div>
       <Sort handleSorting={handleSorting} />

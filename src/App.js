@@ -22,7 +22,8 @@ function App() {
   const [sortFilter, setSortFilter] = useState("&order=newest_first")
 
   function handleTrackFilter(slug) {
-    setTrackFilter(slug ? `&track=${slug}` : "")
+    setCurrentPage(1)
+    setTrackFilter(slug !== "all" ? `&track=${slug}` : "")
   }
 
   function formatQuery(query) {
@@ -32,6 +33,7 @@ function App() {
   function handleExerciseFilter(exercise) {
     const formattedQuery = formatQuery(exercise)
     if (formattedQuery !== exerciseFilter.split("=")[1]) {
+      setCurrentPage(1)
       setExerciseFilter(exercise ? `&exercise=${formattedQuery}` : "")
     }
   }
