@@ -1,6 +1,6 @@
 # My Submission to Exercism's Frontend Developer Challenge
 
-This is my implementation of [Exercism's Frontend Developer Challenge for applicants](https://github.com/exercism/hiring-frontend-developer). I have limited experience with React and no prior experience with Tailwind 3 or TypeScript. Ultimately, I decided to take on the challenge using React and Tailwind 3 while forgoing TypeScript for the mean time as not to overwhelm myself. I'll revisit TypeScript through projects like those found at [Frontend Mentor](https://frontendmentor.io/) and by joining the [TypeScript track](https://exercism.org/tracks/typescript) at [Exercism.org](https://exercism.org/).
+This is my implementation of [Exercism's Frontend Developer Challenge for applicants](https://github.com/exercism/hiring-frontend-developer). I decided to take on the challenge using React and Tailwind 3 while forgoing TypeScript for the mean time as not to overwhelm myself. I'll revisit TypeScript through projects like those found at [Frontend Mentor](https://frontendmentor.io/) and by joining the [TypeScript track](https://exercism.org/tracks/typescript) at [Exercism.org](https://exercism.org/).
 
 ## Table of contents
 
