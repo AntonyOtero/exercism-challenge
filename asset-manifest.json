@@ -1,23 +1,26 @@
 {
   "files": {
-    "main.css": "/exercism-challenge/static/css/main.975068ce.css",
-    "main.js": "/exercism-challenge/static/js/main.7e80cb5c.js",
+    "main.css": "/exercism-challenge/static/css/main.0e817617.css",
+    "main.js": "/exercism-challenge/static/js/main.67804d29.js",
     "static/js/787.0174982d.chunk.js": "/exercism-challenge/static/js/787.0174982d.chunk.js",
     "static/media/exercism-logo.svg": "/exercism-challenge/static/media/exercism-logo.c5c88540d04287dc72e43539b6c5f485.svg",
     "static/media/icon-bg.svg": "/exercism-challenge/static/media/icon-bg.346b113b6b26c5770595e8c45e15b3c5.svg",
+    "static/media/testimonial-icon.svg": "/exercism-challenge/static/media/testimonial-icon.a28198df8c3a70094fe967414c504a9b.svg",
     "static/media/testimonials-icon.svg": "/exercism-challenge/static/media/testimonials-icon.32e567f0e6715c87b091b7147fb3ae40.svg",
-    "static/media/contribute-icon.svg": "/exercism-challenge/static/media/contribute-icon.9578dc3645baa2a45e372148a92d755c.svg",
-    "static/media/dashboard-icon.svg": "/exercism-challenge/static/media/dashboard-icon.42da48031d17fff2a7c851b0c29e723d.svg",
+    "static/media/more-options.svg": "/exercism-challenge/static/media/more-options.44733836c7cbd341bac101cc9bb98e1f.svg",
+    "static/media/contribute-icon.svg": "/exercism-challenge/static/media/contribute-icon.611b0533d45a84a75cab384fe4694147.svg",
+    "static/media/dashboard-icon.svg": "/exercism-challenge/static/media/dashboard-icon.5fd068842438ee6be864284ad33f88e8.svg",
+    "static/media/badge-icon.svg": "/exercism-challenge/static/media/badge-icon.41cfc59a0080e4509139cd8ff7c43655.svg",
     "index.html": "/exercism-challenge/index.html",
-    "static/media/mentoring-icon.svg": "/exercism-challenge/static/media/mentoring-icon.6bf9824d85e585acbc331d896474e9f9.svg",
-    "static/media/tracks-icon.svg": "/exercism-challenge/static/media/tracks-icon.0f581215731827bf9d6169e98f819086.svg",
+    "static/media/mentoring-icon.svg": "/exercism-challenge/static/media/mentoring-icon.b63e7487ef659ae7ac8e0ce904d412f4.svg",
+    "static/media/tracks-icon.svg": "/exercism-challenge/static/media/tracks-icon.7c68e2aac38c5d5be351dc62dc5c3071.svg",
     "static/media/header-divider.svg": "/exercism-challenge/static/media/header-divider.9257779ff36ab4f776b8d2586e72a91a.svg",
-    "main.975068ce.css.map": "/exercism-challenge/static/css/main.975068ce.css.map",
-    "main.7e80cb5c.js.map": "/exercism-challenge/static/js/main.7e80cb5c.js.map",
+    "main.0e817617.css.map": "/exercism-challenge/static/css/main.0e817617.css.map",
+    "main.67804d29.js.map": "/exercism-challenge/static/js/main.67804d29.js.map",
     "787.0174982d.chunk.js.map": "/exercism-challenge/static/js/787.0174982d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.975068ce.css",
-    "static/js/main.7e80cb5c.js"
+    "static/css/main.0e817617.css",
+    "static/js/main.67804d29.js"
   ]
 }
