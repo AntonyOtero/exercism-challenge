@@ -20,7 +20,7 @@ export default function Sort({handleSorting }) {
       {({ open }) => (
         <>
           <div className="w-80 relative">
-            <Listbox.Button className="relative w-full bg-theme-light-200 rounded-md shadow-sm cursor-pointer focus:outline-none focus:ring-1 focus:ring-theme-active focus:border-theme-active sm:text-sm">
+            <Listbox.Button className="relative w-full bg-theme-light-200 border border-transparent rounded-md shadow-sm cursor-pointer focus:outline-none focus:text-theme-default focus:bg-white focus:border focus:border-theme-active focus:shadow-theme-glow sm:text-sm">
               <span className="flex items-center">
                 <span className="block my-3 mx-5 text-base text-theme-faded-300 truncate">
                   Sort by {selectedSort}

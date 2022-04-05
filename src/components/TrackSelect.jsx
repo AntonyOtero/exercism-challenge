@@ -18,7 +18,7 @@ export default function TrackSelect({ tracks, trackCounts, totalCount, handleTra
   return (
     <Listbox as="div" className="relative" value={selectedTrack} onChange={handleSelection}>
       <Listbox.Button
-        className='flex items-center'
+        className='flex items-center border border-transparent focus:outline-none focus:text-theme-default focus:bg-white focus:border focus:border-theme-active focus:shadow-theme-glow'
       >
         {selectedTrack}
         <ChevronDownIcon className='w-5 ml-3' />
