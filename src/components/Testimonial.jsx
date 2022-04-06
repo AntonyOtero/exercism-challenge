@@ -35,7 +35,7 @@ export default function Testimonial({ id, track, exercise, mentor, content, crea
           <p className="text-sm text-slate-500">on <span>{exercise.title}</span> in <span>{track.title}</span></p>
         </div>
       </div>
-      <p className="col-span-3 max-w-[525px] text-sm text-slate-700 truncate">{content}</p>
+      <p className="col-span-3 max-w-[525px] ml-16 text-sm text-slate-700 truncate">{content}</p>
       <div className="flex items-center justify-end">
         <p className="mr-12 text-right text-sm font-medium text-slate-500">
           {getDateDiff(new Date(Date.now()), new Date(created_at))}
