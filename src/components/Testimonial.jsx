@@ -2,12 +2,6 @@ import React from "react"
 import { ChevronRightIcon } from '@heroicons/react/outline'
 
 export default function Testimonial({ id, track, exercise, mentor, content, created_at }) {
-  function trimContent(str) {
-    if (str.length > 67) {
-      return str.split('').splice(0, 67).join('') + `...`
-    }
-    return str
-  }
 
   function getDateDiff(currentDate, resultDate) {
     if (resultDate.getFullYear() !== currentDate.getFullYear()) {
@@ -41,7 +35,7 @@ export default function Testimonial({ id, track, exercise, mentor, content, crea
           <p className="text-sm text-slate-500">on <span>{exercise.title}</span> in <span>{track.title}</span></p>
         </div>
       </div>
-      <p className="col-span-3 text-sm text-slate-700">{trimContent(content)}</p>
+      <p className="col-span-3 max-w-[525px] text-sm text-slate-700 truncate">{content}</p>
       <div className="flex items-center justify-end">
         <p className="mr-12 text-right text-sm font-medium text-slate-500">
           {getDateDiff(new Date(Date.now()), new Date(created_at))}
