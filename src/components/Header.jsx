@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import TrackFilter from './TrackFilter';
 import ExerciseFilter from './ExerciseFilter';
-import Sort from './Sort';
+import SortFilter from './SortFilter';
 import GenericTrackIcon from '../images/generic-track.png'
 
 export default function Header({ trackCounts, totalCount, handleTrackFilter, handleExerciseFilter, handleSorting}) {
@@ -41,7 +41,7 @@ export default function Header({ trackCounts, totalCount, handleTrackFilter, han
         />
         <ExerciseFilter handleExerciseFilter={handleExerciseFilter} />
       </div>
-      <Sort handleSorting={handleSorting} />
+      <SortFilter handleSorting={handleSorting} />
     </div>
   )
 }
