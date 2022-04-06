@@ -38,28 +38,28 @@ export default function TrackFilter({ tracks, trackCounts, handleTrackFilter }) 
                     'bg-white flex items-center justify-between w-80 py-2 px-6'
                 }}
               >
-              {({ selected }) => (
-                <>
-                  <div className="flex items-center">
-                    <span>
-                      {selected ? (
-                        <div className="flex items-center justify-center w-5 h-5 mr-6 border border-theme-faded-300 rounded-full">
-                          <div className="w-2.5 h-2.5 bg-theme-faded-400 border rounded-full"></div>
-                        </div>
-                      ) : (
-                        <div className="flex items-center justify-center w-5 h-5 mr-6 border border-theme-faded-300 rounded-full">
-                        </div>
-                      )}
-                    </span>
-                    <img className='h-10 mr-4' src={track.icon_url} alt="" />
-                    <span>
-                      {track.title}
-                    </span>
-                  </div>
-                  <Tag label={trackCounts[track.slug]} />
-                </>
-              )}
-            </Listbox.Option>
+                {({ selected }) => (
+                  <>
+                    <div className="flex items-center">
+                      <span>
+                        {selected ? (
+                          <div className="flex items-center justify-center w-5 h-5 mr-6 border border-theme-faded-300 rounded-full">
+                            <div className="w-2.5 h-2.5 bg-theme-faded-400 border rounded-full"></div>
+                          </div>
+                        ) : (
+                          <div className="flex items-center justify-center w-5 h-5 mr-6 border border-theme-faded-300 rounded-full">
+                          </div>
+                        )}
+                      </span>
+                      <img className='h-10 mr-4' src={track.icon_url} alt="" />
+                      <span>
+                        {track.title}
+                      </span>
+                    </div>
+                    <Tag label={trackCounts[track.slug]} />
+                  </>
+                )}
+              </Listbox.Option>
           ))}
         </Listbox.Options>
       </Transition>
