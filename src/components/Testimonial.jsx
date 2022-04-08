@@ -32,7 +32,12 @@ export default function Testimonial({ id, track, exercise, mentor, content, crea
         <img className="h-full max-h-11 mr-4 rounded-full" src={mentor.avatar_url} alt={mentor.handle} />
         <div>
           <p className="font-medium">{mentor.handle}</p>
-          <p className="text-sm text-slate-500">on <span>{exercise.title}</span> in <span>{track.title}</span></p>
+          <p className="text-sm text-slate-500">
+            on
+            <span>{exercise.title}</span>
+             in
+            <span>{track.title}</span>
+          </p>
         </div>
       </div>
       <p className="col-span-3 max-w-[525px] ml-16 text-sm text-slate-700 truncate">{content}</p>
