@@ -8,7 +8,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function Sort({handleSorting }) {
+export default function Sort({ handleSorting }) {
   const [selectedSort, setSelectedSort] = useState(options[0])
 
   useEffect(() => {
@@ -16,7 +16,7 @@ export default function Sort({handleSorting }) {
   }, [selectedSort])
 
   return (
-    <Listbox value={selectedSort} onChange={setSelectedSort}>
+    <Listbox value={selectedSort} onChange={setSelectedSort} data-testid="dropdown">
       {({ open }) => (
         <div className="w-80 relative">
           <Listbox.Button className="relative w-full bg-theme-light-200 border border-transparent rounded-md shadow-sm cursor-pointer focus:outline-none focus:text-theme-default focus:bg-white focus:border focus:border-theme-active focus:shadow-theme-glow sm:text-sm">
@@ -53,7 +53,11 @@ export default function Sort({handleSorting }) {
                     <>
                       <div className="flex items-center">
                         <span
-                          className={classNames(selected ? 'font-semibold' : 'font-normal', 'ml-3')}
+                          className={
+                            classNames(selected ?
+                              'font-semibold' :
+                              'font-normal', 'ml-3')
+                          }
                         >
                           {option}
                         </span>
