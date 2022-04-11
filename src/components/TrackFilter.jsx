@@ -12,7 +12,7 @@ export default function TrackFilter({ tracks, trackCounts, handleTrackFilter }) 
   }
 
   return (
-    <Listbox value={selectedTrack} onChange={handleSelection} as="div" className="relative">
+    <Listbox value={selectedTrack} onChange={handleSelection} as="div" className="relative" data-testid="track-dropdown">
       <Listbox.Button className="flex items-center w-20 border border-transparent rounded-md focus:outline-none focus:text-theme-default focus:bg-white focus:border focus:border-theme-active focus:shadow-theme-glow">
         <img className="h-10" src={selectedTrack.icon_url} alt="" />
         <ChevronDownIcon className='w-5 ml-3' />
