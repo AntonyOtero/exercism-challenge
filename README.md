@@ -40,13 +40,13 @@ You can read the [details of the challenge here](https://github.com/exercism/hir
 - [GitHub Pages](https://pages.github.com/) - Hosting
 - [Yarn](https://yarnpkg.com/) - Package manager
 
-### What I learned
+<!-- ### What I learned
 
 ...revisit
-
+ -->
 ### Continued development
 
-...revisit
+What I enjoyed the most about this project was that it forced me to use tools that I hadn't before. It helped me become more comfortable reading through documentation, looking  at examples, and asking the right questions. I enjoyed using Tailwindcss and very quickly learned enough to extend the utility class to suite the needs of the project. Paired with Heroicons and Headless UI, Tailwindcss allowed me to very quickly put together the styling of the site and focus on the functionality. I will definitely continue to use Tailwindcss and has peaked my curiosity towards libraries like Bulma. As for React, while I managed to put together a solution, I know there is still a lot to learn. After seeing the potential of React I want to explore Next.js and TypeScript. The most difficult part of the challenge to me was creating the tests. I have a lot to learn about Jest, React Testing Library, and Test-Driven Development in general.
 
 ### Useful resources
 
@@ -74,7 +74,7 @@ gh repo fork AntonyOtero/exercism-challenge --clone=true
 
 ### Install
 
-To install all the project dependencies, run:
+To install all the project dependencies, within the directory of the cloned project, run:
 
 ``` zsh
 yarn
@@ -120,5 +120,5 @@ yarn deploy
 
 ## Author
 
-- Website - [Antony Otero](https://www.antonyotero.com/)
+- Website - [antonyotero.com](https://www.antonyotero.com/)
 - LinkedIn - [@antonyotero](https://www.linkedin.com/in/antonyotero/)
