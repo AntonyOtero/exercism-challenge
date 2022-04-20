@@ -34,9 +34,9 @@ export default function Testimonial({ id, track, exercise, mentor, content, crea
           <p className="font-medium">{mentor.handle}</p>
           <p className="text-sm text-slate-500">
             on
-            <span>{exercise.title}</span>
+            <span> {exercise.title} </span>
              in
-            <span>{track.title}</span>
+            <span> {track.title} </span>
           </p>
         </div>
       </div>
